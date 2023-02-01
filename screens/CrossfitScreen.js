@@ -7,10 +7,15 @@ const CrossfitScreen = () => {
   const RenderDays = ({ item }) => {
     console.log("Entering RenderDays")
     return (
-      <Card
-        title={item.name}
-        image={item.image}
-      >
+      <Card>
+        <Card.Title>
+          <Text>
+            {item.name}
+          </Text>
+        </Card.Title>
+        <Card.Image
+          source={item.image}
+        />
         <Text>
             {item.intensity}
         </Text>
@@ -20,8 +25,9 @@ const CrossfitScreen = () => {
 
   return (
     <View>
-      <Text>CrossfitScreen</Text>
       <FlatList 
+        horizontal={false}
+        numColumns={2}
         data={daysData}
         renderItem={RenderDays}
         keyExtractor={(item) => item.id.toString()}

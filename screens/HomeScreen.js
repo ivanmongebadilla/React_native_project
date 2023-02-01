@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Linking } from "react-native";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "../features/CarouselCardItem";

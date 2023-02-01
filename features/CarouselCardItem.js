@@ -1,18 +1,32 @@
 
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView } from "react-native";
+import React, { useCallback } from 'react';
+import { View, Text, StyleSheet, Dimensions, Image, SafeAreaView, Pressable, Alert, Linking } from "react-native";
+import { baseUrl } from '../shared/baseUrl';
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 const CarouselCardItem = ({ item, index }) => {
+  const url = 'https://google.com'
+
+  const handlePress = async () => {
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert('URL not supported')
+    }
+  }
+
   return (
     <View style={styles.container} key={index}>
       <Image
-        source={{ uri: item.image }}
+        source={{ uri: baseUrl + item.image }}
         style={styles.image}
       />
-      <Text style={styles.header}>{item.title}</Text>
+      <Pressable onPress={() => handlePress()}>
+        <Text style={styles.header}>{item.title}</Text>
+      </Pressable>
       <Text style={styles.body}>{item.body}</Text>
     </View>
   )

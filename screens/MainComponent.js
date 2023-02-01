@@ -4,6 +4,7 @@ import HomeScreen from "./HomeScreen";
 import { StyleSheet, View } from "react-native";
 import { Icon } from 'react-native-elements';
 import CrossfitScreen from "./CrossfitScreen";
+import GymScreen from "./GymScreen";
 import { useDispatch } from "react-redux";
 import { fetchNews } from "../reducers/newsSlice";
 import { useEffect } from "react";
@@ -64,6 +65,32 @@ const CrossfitNavigator = () => {
     )
 }
 
+const GymNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator
+            initialRouteName="Gym" 
+            screenOptions={screenOptions}
+        >
+            <Stack.Screen 
+                name="Gym" 
+                component={GymScreen} 
+                options={({ navigation }) => ({
+                    headerLeft: () => (
+                     <Icon 
+                       name='heart'
+                       type='font-awesome'
+                       iconStyle={styles.stackIcon}
+                       onPress={() => navigation.toggleDrawer()}
+                     />
+                   )
+                })}
+            />
+        </Stack.Navigator>
+    )
+}
+
+
 const MainComponent = () => {
     const dispatch = useDispatch();
 
@@ -105,6 +132,20 @@ const MainComponent = () => {
                     ) 
                 }}
             />
+            <Drawer.Screen
+                name="Gym"
+                component={GymNavigator}
+                options={{ title: "Gym Training",
+                    drawerIcon: ({ color }) => (
+                        <Icon 
+                            name='heart'
+                            type='font-awesome'
+                            iconStyle={{ width: 24 }}
+                            color={color}
+                        />
+                    ) 
+                }}
+            />
         </Drawer.Navigator>
     </View>
   )
@@ -115,7 +156,10 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: '#fff',
         fontSize: 24
-    }
+    },
+    navigationText: {
+        color: '#fff'
+    },
   });
 
 export default MainComponent
