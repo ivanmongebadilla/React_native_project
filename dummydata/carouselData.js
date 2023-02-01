@@ -21,3 +21,42 @@ export const newData = [
 		link: "https://www.onnit.com/academy/5-steps-for-a-perfect-warmup/"
 	}	
 ]
+
+export const daysData = [
+	{
+		id: 0,
+        name: "Monday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "Moderate Intensity"
+	},
+	{
+		id: 1,
+        name: "Tuesday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "Moderate Intensity"
+	},
+	{
+		id: 2,
+        name: "Wendesday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "Low Intensity"
+	},
+	{
+		id: 3,
+        name: "Thursday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "High Intensity"
+	},
+	{
+		id: 4,
+        name: "Friday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "Moderate Intensity"
+	},
+	{
+		id: 5,
+        name: "Saturday",
+        image: require("../assets/images/react-lake.jpg"),
+        intensity: "Low Intensity"
+	}
+]

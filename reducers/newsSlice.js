@@ -4,7 +4,6 @@ import { baseUrl } from '../shared/baseUrl';
 export const fetchNews = createAsyncThunk(
     'news/fetchNews',
     async () => {
-        console.log("Entering fetch")
         const response = await fetch(baseUrl + 'news');
         if (!response.ok) {
             return Promise.reject(
