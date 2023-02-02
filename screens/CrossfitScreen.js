@@ -13,23 +13,20 @@ const CrossfitScreen = ({ navigation }) => {
   const RenderDays = ({ item }) => {
     console.log("Entering RenderDays")
     return (
-      <Pressable
-        onPress={console.log('card pressed')}
-      >
-        <Card>
-          <Card.Title>
-            <Text>
-              {item.name}
-            </Text>
-          </Card.Title>
-          <Card.Image
-            source={{ uri: baseUrl + item.image }}
-          />
+      <Card>
+        <Card.Title>
           <Text>
-              {item.intensity}
+            {item.name}
           </Text>
-        </Card>
-      </Pressable>
+        </Card.Title>
+        <Card.Image
+          source={{ uri: baseUrl + item.image }}
+          onPress={() => navigation.navigate("DayWorkOut", { item })}
+        />
+        <Text>
+            {item.intensity}
+        </Text>
+      </Card>
     )
   }
 

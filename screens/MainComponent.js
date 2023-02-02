@@ -66,6 +66,9 @@ const CrossfitNavigator = () => {
             <Stack.Screen 
                 name="DayWorkOut"
                 component={CrossfitDayScreen}
+                options={({ route }) => ({
+                    title: route.params.item.name,
+                })}
             />
         </Stack.Navigator>
     )
