@@ -7,7 +7,9 @@ import CrossfitScreen from "./CrossfitScreen";
 import GymScreen from "./GymScreen";
 import { useDispatch } from "react-redux";
 import { fetchNews } from "../reducers/newsSlice";
+import { fetchcrossfitDays } from '../reducers/crossfitDaysSlice';
 import { useEffect } from "react";
+import CrossfitDayScreen from "./CrossfitDayScreen";
 
 
 const Drawer = createDrawerNavigator();
@@ -61,6 +63,10 @@ const CrossfitNavigator = () => {
                    )
                 })}
             />
+            <Stack.Screen 
+                name="DayWorkOut"
+                component={CrossfitDayScreen}
+            />
         </Stack.Navigator>
     )
 }
@@ -96,6 +102,7 @@ const MainComponent = () => {
 
     useEffect(() => {
         dispatch(fetchNews())
+        dispatch(fetchcrossfitDays())
     })
 
   return (

@@ -22,6 +22,44 @@
 			"link": "https://www.onnit.com/academy/5-steps-for-a-perfect-warmup/"
 		}		
 	],
+	"crossfitDays": [
+		{
+			"id": 0,
+			"name": "Monday",
+			"image": "images/download.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 1,
+			"name": "Tuesday",
+			"image": "images/download2.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 2,
+			"name": "Wendesday",
+			"image": "images/download3.jpg",
+			"intensity": "Low Intensity"
+		},
+		{
+			"id": 3,
+			"name": "Thursday",
+			"image": "images/download4.jpg",
+			"intensity": "High Intensity"
+		},
+		{
+			"id": 4,
+			"name": "Friday",
+			"image": "images/download5.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 5,
+			"name": "Saturday",
+			"image": "images/download6.jpg",
+			"intensity": "Low Intensity"
+		}
+	],
 	"comments": [
 		{
 		  "id": 0,

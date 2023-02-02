@@ -10,9 +10,9 @@ const CarouselCardItem = ({ item, index }) => {
   const url = 'https://google.com'
 
   const handlePress = async () => {
-    const supported = await Linking.canOpenURL(url);
+    const supported = await Linking.canOpenURL(item.link);
     if (supported) {
-      await Linking.openURL(url);
+      await Linking.openURL(item.link);
     } else {
       Alert.alert('URL not supported')
     }

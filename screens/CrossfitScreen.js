@@ -1,39 +1,51 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Pressable } from "react-native";
 import { daysData } from '../dummydata/carouselData';
 import { Card } from 'react-native-elements';
+import { useState } from "react";
+import { baseUrl } from "../shared/baseUrl";
+import { useSelector } from "react-redux";
 
-const CrossfitScreen = () => {
+const CrossfitScreen = ({ navigation }) => {
+
+  const crossfitDays = useSelector((state) => state.crossfitDays)
+  console.log(crossfitDays.isLoading)
   
   const RenderDays = ({ item }) => {
     console.log("Entering RenderDays")
     return (
-      <Card>
-        <Card.Title>
+      <Pressable
+        onPress={console.log('card pressed')}
+      >
+        <Card>
+          <Card.Title>
+            <Text>
+              {item.name}
+            </Text>
+          </Card.Title>
+          <Card.Image
+            source={{ uri: baseUrl + item.image }}
+          />
           <Text>
-            {item.name}
+              {item.intensity}
           </Text>
-        </Card.Title>
-        <Card.Image
-          source={item.image}
-        />
-        <Text>
-            {item.intensity}
-        </Text>
-      </Card>
+        </Card>
+      </Pressable>
     )
   }
 
-  return (
-    <View>
-      <FlatList 
-        horizontal={false}
-        numColumns={2}
-        data={daysData}
-        renderItem={RenderDays}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </View>
-  );
+  if (crossfitDays.isLoading === false) {
+    return (
+      <View>
+        <FlatList 
+          horizontal={false}
+          numColumns={2}
+          data={crossfitDays.crossfitDaysArray}
+          renderItem={RenderDays}
+          keyExtractor={(item) => item.id.toString()}
+        /> 
+      </View>
+    );
+  }
 }
 
 export default CrossfitScreen;
