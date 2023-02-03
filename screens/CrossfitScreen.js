@@ -11,7 +11,7 @@ const CrossfitScreen = ({ navigation }) => {
   console.log(crossfitDays.isLoading)
   
   const RenderDays = ({ item }) => {
-    console.log("Entering RenderDays")
+    
     return (
       <Card>
         <Card.Title>
