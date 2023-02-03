@@ -1,142 +1,253 @@
-"news": [
-	{
-		"id": 0,
-		"image": "images/crossfit1.jpg",
-		"title": "2023 CROSSFIT GAMES SEASON UPDATES",
-        "body": "carousel1",
-		"link": "https://games.crossfit.com/article/2023-crossfit-games-season-updates/games"
-	},
-	{
-		"id": 1,
-		"image": "https://images.app.goo.gl/DuGJydzE6QnAP7Nz8",
-		"title": "STUDY: HALF OF AMERICANS SUFFER FROM GYM ANXIETY",
-        "body": "carousel2",
-		"link": "https://www.ihrsa.org/improve-your-club/industry-news/fitness-industry-roundup-gym-timidation-is-real/"
-	},
-	{
-		"id": 2,
-		"image": "https://images.app.goo.gl/VnejP1pRf9Ut7deg9",
-		"title": "5 STEPS FOR A PERFECT WARMUP",
-        "body": "carousel3",
-		"link": "https://www.onnit.com/academy/5-steps-for-a-perfect-warmup/"
-	}		
-]
-"comments": [
-    {
-      "id": 0,
-      "type": "Crossfit",
-	  "day": "Monday",
-      "rating": 5,
-      "text": "The grass was indeed greener here than our last campsite.",
-      "author": "Simon Hunt",
-      "date": "2018-10-25T16:30Z"
-    },
-    {
-      "id": 1,
-      "type": "Crossfit",
-	  "day": "Monday",
-      "rating": 3,
-      "text": "This lone monkey kept following us back to our tent.",
-      "author": "Zandra Katherine",
-      "date": "2017-06-17T03:33Z"
-    },
-    {
-      "id": 2,
-      "type": "Crossfit",
-	  "day": "Tusday",
-      "rating": 4,
-      "text": "Do not feed the wildlife. They will follow you back to the tent.",
-      "author": "Amy Keophilavong",
-      "date": "2019-02-18T18:12Z"
-    },
-    {
-      "id": 3,
-      "type": "Crossfit",
-	  "day": "Wendesday",
-      "rating": 3,
-      "text": "Avoid Sundays; couldn't relax and play my flute with all the noisy kids.",
-      "author": "Jean Luc",
-      "date": "2019-08-04T20:11Z"
-    },
-    {
-      "id": 4,
-      "type": "Crossfit",
-	  "day": "Thursday",
-      "rating": 5,
-      "text": "This has been our favorite campsite for over 7 years. It is an absolutely beautiful site. The hosts are very friendly and helpful. Don't forget to try out the lake.",
-      "author": "R. E. Osariemen",
-      "date": "2018-07-23T19:44Z"
-    },
-    {
-      "id": 5,
-      "type": "Crossfit",
-	  "day": "Friday",
-      "rating": 4,
-      "text": "There's nothing more fun than setting up a tent in a rainstorm.",
-      "author": "Juan Cortez",
-      "date": "2017-06-17T03:33Z"
-    },
-    {
-      "id": 6,
-      "type": "Crossfit",
-	  "day": "Saturday",
-      "rating": 5,
-      "text": "I caught a world-record-breaking trout here on my last visit.",
-      "author": "McKenzie Sebastian",
-      "date": "2019-02-18T18:12Z"
-    },
-    {
-      "id": 7,
-      "type": "Gym",
-	  "day": "Monday",
-      "rating": 5,
-      "text": "The campground was beautiful, but the bugs could bite sometimes.",
-      "author": "Brennen Ech",
-      "date": "2019-08-04T20:11Z"
-    },
-    {
-      "id": 8,
-      "type": "Gym",
-	  "day": "Tuesday",
-      "rating": 4,
-      "text": "Love the river but I didn't catch any fish.",
-      "author": "Amy Keophilavong",
-      "date": "2018-07-23T19:44Z"
-    },
-    {
-      "id": 9,
-      "type": "Gym",
-	  "day": "Wendesday",
-      "rating": 5,
-      "text": "A wonderful place to reconnect with nature.",
-      "author": "Jordan Runn",
-      "date": "2019-08-04T20:11Z"
-    },
-    {
-      "id": 10,
-      "type": "Gym",
-	  "day": "Thursday",
-      "rating": 5,
-      "text": "The Frozen Tundra is great place for family and friends camping!",
-      "author": "Olaf the Snowman",
-      "date": "2019-02-18T18:12Z"
-    },
-    {
-      "id": 11,
-      "type": "Gym",
-	  "day": "Friday",
-      "rating": 1,
-      "text": "We had to leave about 2am to go back to the city because the quiet was just too much!",
-      "author": "Vincent and Mona Lisa Gambini",
-      "date": "2018-10-25T16:30Z"
-    },
-    {
-      "id": 12,
-      "type": "Gym",
-	  "day": "Saturday",
-      "rating": 5,
-      "text": "The stars at night were a revelation!",
-      "author": "Ann Dabramov",
-      "date": "2018-07-23T19:44Z"
-    }
-  ]
+{
+	"news": [
+		{
+			"id": 0,
+			"image": "images/Crossfit1.jpg",
+			"title": "2023 CROSSFIT GAMES SEASON UPDATES",
+			"body": "carousel1",
+			"link": "https://games.crossfit.com/article/2023-crossfit-games-season-updates/games"
+		},
+		{
+			"id": 1,
+			"image": "images/gym-anxiety.jpg",
+			"title": "STUDY: HALF OF AMERICANS SUFFER FROM GYM ANXIETY",
+			"body": "carousel2",
+			"link": "https://www.ihrsa.org/improve-your-club/industry-news/fitness-industry-roundup-gym-timidation-is-real/"
+		},
+		{
+			"id": 2,
+			"image": "images/gymwarming.jpg",
+			"title": "5 STEPS FOR A PERFECT WARMUP",
+			"body": "carousel3",
+			"link": "https://www.onnit.com/academy/5-steps-for-a-perfect-warmup/"
+		}		
+	],
+	"crossfitDays": [
+		{
+			"id": 0,
+			"name": "Monday",
+			"image": "images/download.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 1,
+			"name": "Tuesday",
+			"image": "images/download2.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 2,
+			"name": "Wendesday",
+			"image": "images/download3.jpg",
+			"intensity": "Low Intensity"
+		},
+		{
+			"id": 3,
+			"name": "Thursday",
+			"image": "images/download4.jpg",
+			"intensity": "High Intensity"
+		},
+		{
+			"id": 4,
+			"name": "Friday",
+			"image": "images/download5.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 5,
+			"name": "Saturday",
+			"image": "images/download6.jpg",
+			"intensity": "Low Intensity"
+		}
+	],
+	"crossfitWorkouts": [
+		{
+			"id": 0,
+			"day": "Monday",
+			"type": "WarmUp",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "Child Pose",
+					"link": "https://www.youtube.com/watch?v=q-_M3Cfqmj4"
+				},
+				{
+					"id": 1,
+					"workout": "Air Squat",
+					"link": "https://www.youtube.com/watch?v=lcNmEtvrMGo"
+				},
+				{
+					"id": 2,
+					"workout": "Spiderman Stretch",
+					"link": "https://www.youtube.com/watch?v=oOZIjw75TKs"
+					
+				}
+			]	
+		},
+		{
+			"id": 1,
+			"day": "Monday",
+			"type": "Strength",
+			"workout": [ 
+				{
+					"id": 0,
+					"workout": "1 X 8 Barbell Squats at 60%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 1,
+					"workout": "1 X 6 Barbell Squats at 73%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 2,
+					"workout": "2 x 3 Barbell Squats at 85%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+					
+				}
+			]	
+		},
+		{
+			"id": 2,
+			"day": "Monday",
+			"type": "WOD",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "18-Calorie Row",
+					"link": "https://www.youtube.com/watch?v=l_XFu9KcHPA"
+				},
+				{
+					"id": 1,
+					"workout": "12 Push-Ups",
+					"link": "https://www.youtube.com/watch?v=0pkjOk0EiAk"
+				},
+				{
+					"id": 2,
+					"workout": "6 Dumbell Squat Snatches Alternating ♀ 40-lb DB ♂ 60-lb DB",
+					"link": "https://www.youtube.com/watch?v=etK3OPjM3S4"
+					
+				}
+			]	
+		},
+	]
+	"comments": [
+		{
+		  "id": 0,
+		  "type": "Crossfit",
+		  "day": "Monday",
+		  "rating": 5,
+		  "text": "The grass was indeed greener here than our last campsite.",
+		  "author": "Simon Hunt",
+		  "date": "2018-10-25T16:30Z"
+		},
+		{
+		  "id": 1,
+		  "type": "Crossfit",
+		  "day": "Monday",
+		  "rating": 3,
+		  "text": "This lone monkey kept following us back to our tent.",
+		  "author": "Zandra Katherine",
+		  "date": "2017-06-17T03:33Z"
+		},
+		{
+		  "id": 2,
+		  "type": "Crossfit",
+		  "day": "Tusday",
+		  "rating": 4,
+		  "text": "Do not feed the wildlife. They will follow you back to the tent.",
+		  "author": "Amy Keophilavong",
+		  "date": "2019-02-18T18:12Z"
+		},
+		{
+		  "id": 3,
+		  "type": "Crossfit",
+		  "day": "Wendesday",
+		  "rating": 3,
+		  "text": "Avoid Sundays; couldn't relax and play my flute with all the noisy kids.",
+		  "author": "Jean Luc",
+		  "date": "2019-08-04T20:11Z"
+		},
+		{
+		  "id": 4,
+		  "type": "Crossfit",
+		  "day": "Thursday",
+		  "rating": 5,
+		  "text": "This has been our favorite campsite for over 7 years. It is an absolutely beautiful site. The hosts are very friendly and helpful. Don't forget to try out the lake.",
+		  "author": "R. E. Osariemen",
+		  "date": "2018-07-23T19:44Z"
+		},
+		{
+		  "id": 5,
+		  "type": "Crossfit",
+		  "day": "Friday",
+		  "rating": 4,
+		  "text": "There's nothing more fun than setting up a tent in a rainstorm.",
+		  "author": "Juan Cortez",
+		  "date": "2017-06-17T03:33Z"
+		},
+		{
+		  "id": 6,
+		  "type": "Crossfit",
+		  "day": "Saturday",
+		  "rating": 5,
+		  "text": "I caught a world-record-breaking trout here on my last visit.",
+		  "author": "McKenzie Sebastian",
+		  "date": "2019-02-18T18:12Z"
+		},
+		{
+		  "id": 7,
+		  "type": "Gym",
+		  "day": "Monday",
+		  "rating": 5,
+		  "text": "The campground was beautiful, but the bugs could bite sometimes.",
+		  "author": "Brennen Ech",
+		  "date": "2019-08-04T20:11Z"
+		},
+		{
+		  "id": 8,
+		  "type": "Gym",
+		  "day": "Tuesday",
+		  "rating": 4,
+		  "text": "Love the river but I didn't catch any fish.",
+		  "author": "Amy Keophilavong",
+		  "date": "2018-07-23T19:44Z"
+		},
+		{
+		  "id": 9,
+		  "type": "Gym",
+		  "day": "Wendesday",
+		  "rating": 5,
+		  "text": "A wonderful place to reconnect with nature.",
+		  "author": "Jordan Runn",
+		  "date": "2019-08-04T20:11Z"
+		},
+		{
+		  "id": 10,
+		  "type": "Gym",
+		  "day": "Thursday",
+		  "rating": 5,
+		  "text": "The Frozen Tundra is great place for family and friends camping!",
+		  "author": "Olaf the Snowman",
+		  "date": "2019-02-18T18:12Z"
+		},
+		{
+		  "id": 11,
+		  "type": "Gym",
+		  "day": "Friday",
+		  "rating": 1,
+		  "text": "We had to leave about 2am to go back to the city because the quiet was just too much!",
+		  "author": "Vincent and Mona Lisa Gambini",
+		  "date": "2018-10-25T16:30Z"
+		},
+		{
+		  "id": 12,
+		  "type": "Gym",
+		  "day": "Saturday",
+		  "rating": 5,
+		  "text": "The stars at night were a revelation!",
+		  "author": "Ann Dabramov",
+		  "date": "2018-07-23T19:44Z"
+		}
+	]
+ }

@@ -8,6 +8,7 @@ import GymScreen from "./GymScreen";
 import { useDispatch } from "react-redux";
 import { fetchNews } from "../reducers/newsSlice";
 import { fetchcrossfitDays } from '../reducers/crossfitDaysSlice';
+import { fetchcrossfitWorkouts } from "../reducers/crossfitWorkoutsSlice";
 import { useEffect } from "react";
 import CrossfitDayScreen from "./CrossfitDayScreen";
 
@@ -106,6 +107,7 @@ const MainComponent = () => {
     useEffect(() => {
         dispatch(fetchNews())
         dispatch(fetchcrossfitDays())
+        dispatch(fetchcrossfitWorkouts())
     })
 
   return (

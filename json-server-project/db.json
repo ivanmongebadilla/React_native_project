@@ -60,6 +60,77 @@
 			"intensity": "Low Intensity"
 		}
 	],
+	"crossfitWorkouts": [
+		{
+			"id": 0,
+			"day": "Monday",
+			"type": "WarmUp",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "Child Pose",
+					"link": "https://www.youtube.com/watch?v=q-_M3Cfqmj4"
+				},
+				{
+					"id": 1,
+					"workout": "Air Squat",
+					"link": "https://www.youtube.com/watch?v=lcNmEtvrMGo"
+				},
+				{
+					"id": 2,
+					"workout": "Spiderman Stretch",
+					"link": "https://www.youtube.com/watch?v=oOZIjw75TKs"
+					
+				}
+			]	
+		},
+		{
+			"id": 1,
+			"day": "Monday",
+			"type": "Strength",
+			"workout": [ 
+				{
+					"id": 0,
+					"workout": "1 X 8 Barbell Squats at 60%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 1,
+					"workout": "1 X 6 Barbell Squats at 73%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 2,
+					"workout": "2 x 3 Barbell Squats at 85%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+					
+				}
+			]	
+		},
+		{
+			"id": 2,
+			"day": "Monday",
+			"type": "WOD",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "18-Calorie Row",
+					"link": "https://www.youtube.com/watch?v=l_XFu9KcHPA"
+				},
+				{
+					"id": 1,
+					"workout": "12 Push-Ups",
+					"link": "https://www.youtube.com/watch?v=0pkjOk0EiAk"
+				},
+				{
+					"id": 2,
+					"workout": "6 Dumbell Squat Snatches Alternating ♀ 40-lb DB ♂ 60-lb DB",
+					"link": "https://www.youtube.com/watch?v=etK3OPjM3S4"
+					
+				}
+			]	
+		}
+	],
 	"comments": [
 		{
 		  "id": 0,
