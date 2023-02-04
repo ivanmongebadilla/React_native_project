@@ -69,7 +69,7 @@
 				{
 					"id": 0,
 					"workout": "Child Pose",
-					"link": "https://www.youtube.com/watch?v=q-_M3Cfqmj4"
+					"link": "https://www.youtube.com/embed/q-_M3Cfqmj4"
 				},
 				{
 					"id": 1,
@@ -129,8 +129,8 @@
 					
 				}
 			]	
-		},
-	]
+		}
+	],
 	"comments": [
 		{
 		  "id": 0,
