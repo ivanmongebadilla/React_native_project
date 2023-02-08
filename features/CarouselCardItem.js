@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   image: {
     width: ITEM_WIDTH,
     height: 300,
+    borderRadius: 8,
   },
   header: {
     color: "#222",

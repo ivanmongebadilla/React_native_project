@@ -4,21 +4,21 @@
 			"id": 0,
 			"image": "images/Crossfit1.jpg",
 			"title": "2023 CROSSFIT GAMES SEASON UPDATES",
-			"body": "carousel1",
+			"body": "Tap to open note",
 			"link": "https://games.crossfit.com/article/2023-crossfit-games-season-updates/games"
 		},
 		{
 			"id": 1,
 			"image": "images/gym-anxiety.jpg",
 			"title": "STUDY: HALF OF AMERICANS SUFFER FROM GYM ANXIETY",
-			"body": "carousel2",
+			"body": "Tap to open note",
 			"link": "https://www.ihrsa.org/improve-your-club/industry-news/fitness-industry-roundup-gym-timidation-is-real/"
 		},
 		{
 			"id": 2,
 			"image": "images/gymwarming.jpg",
 			"title": "5 STEPS FOR A PERFECT WARMUP",
-			"body": "carousel3",
+			"body": "Tap to open note",
 			"link": "https://www.onnit.com/academy/5-steps-for-a-perfect-warmup/"
 		}		
 	],
@@ -126,6 +126,238 @@
 					"id": 2,
 					"workout": "6 Dumbell Squat Snatches Alternating ♀ 40-lb DB ♂ 60-lb DB",
 					"link": "https://www.youtube.com/watch?v=etK3OPjM3S4"
+					
+				}
+			]	
+		},
+		{
+			"id": 3,
+			"day": "Tuesday",
+			"type": "WarmUp",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "Child Pose",
+					"link": "https://www.youtube.com/embed/q-_M3Cfqmj4"
+				},
+				{
+					"id": 1,
+					"workout": "Air Squat",
+					"link": "https://www.youtube.com/embed/lcNmEtvrMGo"
+				},
+				{
+					"id": 2,
+					"workout": "Spiderman Stretch",
+					"link": "https://www.youtube.com/embed/oOZIjw75TKs"
+					
+				}
+			]	
+		},
+		{
+			"id": 4,
+			"day": "Tuesday",
+			"type": "Strength",
+			"workout": [ 
+				{
+					"id": 0,
+					"workout": "1 X 8 Barbell Bench Press at 60%",
+					"link": "https://www.youtube.com/watch?v=SCVCLChPQFY"
+				},
+				{
+					"id": 1,
+					"workout": "1 X 6 Barbell Bench Press at 73%",
+					"link": "https://www.youtube.com/watch?v=SCVCLChPQFY"
+				},
+				{
+					"id": 2,
+					"workout": "2 x 3 Barbell Bench Press at 85%",
+					"link": "https://www.youtube.com/watch?v=SCVCLChPQFY"
+					
+				}
+			]	
+		},
+		{
+			"id": 5,
+			"day": "Tuesday",
+			"type": "WOD",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "10 front squats ♀ 125 lb ♂ 185 lb",
+					"link": "https://www.youtube.com/watch?v=uYumuL_G_V0"
+				},
+				{
+					"id": 1,
+					"workout": "5 rope climbs",
+					"link": "https://www.youtube.com/watch?v=Pa4QUC9AvuA"
+				},
+				{
+					"id": 2,
+					"workout": "10 front squats ♀ 125 lb ♂ 185 lb",
+					"link": "https://www.youtube.com/watch?v=uYumuL_G_V0"
+					
+				},
+				{
+					"id": 3,
+					"workout": "4 rope climbs",
+					"link": "https://www.youtube.com/watch?v=Pa4QUC9AvuA"
+				},
+				{
+					"id": 4,
+					"workout": "10 front squats ♀ 125 lb ♂ 185 lb",
+					"link": "https://www.youtube.com/watch?v=uYumuL_G_V0"
+					
+				},
+				{
+					"id": 5,
+					"workout": "3 rope climbs",
+					"link": "https://www.youtube.com/watch?v=Pa4QUC9AvuA"
+				},
+				{
+					"id": 6,
+					"workout": "10 front squats ♀ 125 lb ♂ 185 lb",
+					"link": "https://www.youtube.com/watch?v=uYumuL_G_V0"
+					
+				},
+				{
+					"id": 7,
+					"workout": "2 rope climbs",
+					"link": "https://www.youtube.com/watch?v=Pa4QUC9AvuA"
+				},
+				{
+					"id": 8,
+					"workout": "10 front squats ♀ 125 lb ♂ 185 lb",
+					"link": "https://www.youtube.com/watch?v=uYumuL_G_V0"
+					
+				},
+				{
+					"id": 9,
+					"workout": "1 rope climbs",
+					"link": "https://www.youtube.com/watch?v=Pa4QUC9AvuA"
+				}
+			]	
+		}
+	],
+	"gymDays": [
+		{
+			"id": 0,
+			"name": "Monday",
+			"image": "images/gym1.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 1,
+			"name": "Tuesday",
+			"image": "images/gym2.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 2,
+			"name": "Wendesday",
+			"image": "images/gym3.jpg",
+			"intensity": "Low Intensity"
+		},
+		{
+			"id": 3,
+			"name": "Thursday",
+			"image": "images/gym4.jpg",
+			"intensity": "High Intensity"
+		},
+		{
+			"id": 4,
+			"name": "Friday",
+			"image": "images/gym5.jpg",
+			"intensity": "Moderate Intensity"
+		},
+		{
+			"id": 5,
+			"name": "Saturday",
+			"image": "images/gym6.jpg",
+			"intensity": "Low Intensity"
+		}
+	],
+	"gymWorkouts": [
+		{
+			"id": 0,
+			"day": "Monday",
+			"type": "Day Workout",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "Barbell push press (6 reps x 4 sets)",
+					"link": "https://www.youtube.com/watch?v=iaBVSJm78ko"
+				},
+				{
+					"id": 1,
+					"workout": "Goblet squat (6 reps x 4 sets)",
+					"link": "https://www.youtube.com/watch?v=MeIiIdhvXT4"
+				},
+				{
+					"id": 2,
+					"workout": "Dumbbell single arm row (6 reps x 4 sets)",
+					"link": "https://www.youtube.com/watch?v=xl1YiqQY2vA"
+					
+				},
+				{
+					"id": 3,
+					"workout": "Shoulder lateral raise (6 reps x 4 sets)",
+					"link": "https://www.youtube.com/watch?v=kDqklk1ZESo"
+				},
+				{
+					"id": 4,
+					"workout": "Bench press (6 reps x 4 sets)",
+					"link": "https://www.youtube.com/watch?v=SCVCLChPQFY"
+				}
+			]	
+		},
+		{
+			"id": 1,
+			"day": "Tuesday",
+			"type": "Day Workout",
+			"workout": [ 
+				{
+					"id": 0,
+					"workout": "1 X 8 Barbell Squats at 60%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 1,
+					"workout": "1 X 6 Barbell Squats at 73%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+				},
+				{
+					"id": 2,
+					"workout": "2 x 3 Barbell Squats at 85%",
+					"link": "https://www.youtube.com/watch?v=SW_C1A-rejs"
+					
+				}
+			]	
+		},
+		{
+			"id": 2,
+			"day": "Wendesday",
+			"type": "Day Workout",
+			"workout": [
+				{
+					"id": 0,
+					"workout": "Wide Grip Pull Up 3 sets of MAX reps",
+					"link": "https://www.youtube.com/watch?v=5oxviYmdHCY"
+				},
+				{
+					"id": 1,
+					"workout": "Straight Arm Lat Pull Down 3 sets of 10 reps",
+					"link": "https://www.youtube.com/watch?v=gDtXrJWPdlY"
+				},
+				{
+					"id": 2,
+					"workout": "Machine Reverse Fly 3 sets of 10 reps",
+					"link": "https://www.youtube.com/watch?v=amCU-ziHITM&t=9s"
+					
+				},
+				{
+					"id": 3,
+					"workout": "Upright Row 3 sets of 8 to 10 reps",
+					"link": "https://www.youtube.com/watch?v=amCU-ziHITM&t=9s"
 					
 				}
 			]	

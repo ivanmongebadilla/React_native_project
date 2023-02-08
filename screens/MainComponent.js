@@ -11,7 +11,9 @@ import { fetchcrossfitDays } from '../reducers/crossfitDaysSlice';
 import { fetchcrossfitWorkouts } from "../reducers/crossfitWorkoutsSlice";
 import { useEffect } from "react";
 import CrossfitDayScreen from "./CrossfitDayScreen";
-
+import { fetchgymDays } from "../reducers/gymDaysSlice";
+import { fetchgymWorkouts } from "../reducers/gymWorkoutsSlice";
+import GymDayScreen from './GymDayScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,7 +33,7 @@ const HomeNavigator = () => {
                     title: 'Home',
                     headerLeft: () => (
                       <Icon 
-                        name='home'
+                        name='bars'
                         type='font-awesome'
                         iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
@@ -55,12 +57,12 @@ const CrossfitNavigator = () => {
                 component={CrossfitScreen} 
                 options={({ navigation }) => ({
                     headerLeft: () => (
-                     <Icon 
-                       name='heart'
-                       type='font-awesome'
-                       iconStyle={styles.stackIcon}
-                       onPress={() => navigation.toggleDrawer()}
-                     />
+                        <Icon 
+                            name='fire'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
                    )
                 })}
             />
@@ -88,12 +90,19 @@ const GymNavigator = () => {
                 options={({ navigation }) => ({
                     headerLeft: () => (
                      <Icon 
-                       name='heart'
+                       name='bomb'
                        type='font-awesome'
                        iconStyle={styles.stackIcon}
                        onPress={() => navigation.toggleDrawer()}
                      />
                    )
+                })}
+            />
+            <Stack.Screen 
+                name="gymDayWorkOut"
+                component={GymDayScreen}
+                options={({ route }) => ({
+                    title: route.params.item.name,
                 })}
             />
         </Stack.Navigator>
@@ -108,13 +117,15 @@ const MainComponent = () => {
         dispatch(fetchNews())
         dispatch(fetchcrossfitDays())
         dispatch(fetchcrossfitWorkouts())
+        dispatch(fetchgymDays())
+        dispatch(fetchgymWorkouts())
     })
 
   return (
     <View style={{ flex: 1 }}>
         <Drawer.Navigator
             initialRouteName="Home"
-            drawerStyle={{ backgroundColor: "#273F4B" }}
+            drawerStyle={{ backgroundColor: "#F2F3F4" }}
         >
             <Drawer.Screen
                 name="Home"
@@ -136,7 +147,7 @@ const MainComponent = () => {
                 options={{ title: "Crossfit Training",
                     drawerIcon: ({ color }) => (
                         <Icon 
-                            name='heart'
+                            name='fire'
                             type='font-awesome'
                             iconStyle={{ width: 24 }}
                             color={color}
@@ -150,7 +161,7 @@ const MainComponent = () => {
                 options={{ title: "Gym Training",
                     drawerIcon: ({ color }) => (
                         <Icon 
-                            name='heart'
+                            name='bomb'
                             type='font-awesome'
                             iconStyle={{ width: 24 }}
                             color={color}

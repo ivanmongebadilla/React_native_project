@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import bgImg from '../images/background-img2.jpg'
 
-const CrossfitDayScreen = ({ route }) => {
+const GymDayScreen = ({ route }) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedWorkout, setSelectedWorkout] = useState({});
-    const crossfitWorkouts = useSelector((state) => state.crossfitWorkouts)  
-    const data = crossfitWorkouts.crossfitWorkoutsArray.filter((crossfitWorkouts) => crossfitWorkouts.day === route.params.item.name)
-    
+    const gymWorkouts = useSelector((state) => state.gymWorkouts)  
+    const data = gymWorkouts.gymWorkoutsArray.filter((gymWorkouts) => gymWorkouts.day === route.params.item.name)
+
     const renderWorkouts = ({ item }) => { 
 
         return(
@@ -74,22 +74,22 @@ const CrossfitDayScreen = ({ route }) => {
         );
     }
 
-    return (
-        <View>
-            <ImageBackground
-                source={bgImg}
-                resizeMode="cover"
-                style={styles.bgImage}
-            >
-                <FlatList
-                data={data}
-                renderItem={renderWorkouts}
-                keyExtractor={(item) => item.id.toString()}
-                ItemSeparatorComponent={ItemDivider} 
-                />
-            </ImageBackground>
-        </View>
-    )
+  return (
+    <View>
+        <ImageBackground
+            source={bgImg}
+            resizeMode="cover"
+            style={styles.bgImage}
+        >
+            <FlatList
+            data={data}
+            renderItem={renderWorkouts}
+            keyExtractor={(item) => item.id.toString()}
+            ItemSeparatorComponent={ItemDivider} 
+            />
+        </ImageBackground>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -112,7 +112,9 @@ const styles = StyleSheet.create({
     },
     bgImage: {
       justifyContent: 'center',
+      height: '100%',
+      width: '100%'
     }
 })
 
-export default CrossfitDayScreen;
+export default GymDayScreen;
