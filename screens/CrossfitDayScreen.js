@@ -1,8 +1,9 @@
 import { View, Text, FlatList, StyleSheet, Modal, TouchableOpacity, Button, ImageBackground } from "react-native";
 import { WebView } from 'react-native-webview';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import bgImg from '../images/background-img2.jpg'
+import bgImg from '../images/background-img2.jpg';
+import Timer from "../features/Timer";
 
 const CrossfitDayScreen = ({ route }) => {
     const [showModal, setShowModal] = useState(false);
@@ -29,6 +30,7 @@ const CrossfitDayScreen = ({ route }) => {
                         </Text>
                     )
                 })}
+                <Timer timer={item.timer}/>
                 <Modal
                     animationType='slide'
                     transparent={false}
@@ -112,6 +114,11 @@ const styles = StyleSheet.create({
     },
     bgImage: {
       justifyContent: 'center',
+    },
+    textTime: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 })
 

@@ -11,7 +11,7 @@ const GymScreen = ({ navigation }) => {
 
     const RenderDays = ({ item }) => {
         return (
-            <View style={styles.cardStyle}>
+            <View style={{ borderWidth: 1, borderColor: "grey"}}>
               <Card style={styles.card}>
                 <Card.Title>
                 <Text style={styles.cardTitle}>
@@ -53,7 +53,8 @@ const GymScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   cardStyle: {
-    width: '50%'
+    width: '50%',
+    borderRadius: 5
   },
   card: {
     borderRadius: 8

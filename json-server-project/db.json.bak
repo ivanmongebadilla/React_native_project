@@ -111,6 +111,7 @@
 			"id": 2,
 			"day": "Monday",
 			"type": "WOD",
+			"timer": 0,
 			"workout": [
 				{
 					"id": 0,
@@ -180,6 +181,7 @@
 			"id": 5,
 			"day": "Tuesday",
 			"type": "WOD",
+			"timer": 20,
 			"workout": [
 				{
 					"id": 0,
@@ -340,18 +342,24 @@
 			"workout": [
 				{
 					"id": 0,
-					"workout": "18-Calorie Row",
-					"link": "https://www.youtube.com/watch?v=l_XFu9KcHPA"
+					"workout": "Wide Grip Pull Up 3 sets of MAX reps",
+					"link": "https://www.youtube.com/watch?v=5oxviYmdHCY"
 				},
 				{
 					"id": 1,
-					"workout": "12 Push-Ups",
-					"link": "https://www.youtube.com/watch?v=0pkjOk0EiAk"
+					"workout": "Straight Arm Lat Pull Down 3 sets of 10 reps",
+					"link": "https://www.youtube.com/watch?v=gDtXrJWPdlY"
 				},
 				{
 					"id": 2,
-					"workout": "6 Dumbell Squat Snatches Alternating ♀ 40-lb DB ♂ 60-lb DB",
-					"link": "https://www.youtube.com/watch?v=etK3OPjM3S4"
+					"workout": "Machine Reverse Fly 3 sets of 10 reps",
+					"link": "https://www.youtube.com/watch?v=amCU-ziHITM&t=9s"
+					
+				},
+				{
+					"id": 3,
+					"workout": "Upright Row 3 sets of 8 to 10 reps",
+					"link": "https://www.youtube.com/watch?v=amCU-ziHITM&t=9s"
 					
 				}
 			]	
