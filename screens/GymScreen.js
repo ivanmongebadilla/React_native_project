@@ -1,6 +1,6 @@
 import { View, Text, FlatList, Pressable, StyleSheet, ImageBackground } from "react-native";
 import { daysData } from '../dummydata/carouselData';
-import { Card } from 'react-native-elements';
+import { Card } from 'react-native-paper';
 import { useState } from "react";
 import { baseUrl } from "../shared/baseUrl";
 import { useSelector } from "react-redux";
@@ -11,22 +11,17 @@ const GymScreen = ({ navigation }) => {
 
     const RenderDays = ({ item }) => {
         return (
-            <View style={{ borderWidth: 1, borderColor: "grey"}}>
-              <Card style={styles.card}>
-                <Card.Title>
-                <Text style={styles.cardTitle}>
-                    {item.name}
-                </Text>
-                </Card.Title>
-                <Card.Image
+          <View style={styles.cardStyle}>
+            <Card style={{borderRadius: 15, width: 170, margin: 13, backgroundColor: 'black'}}
+              onPress={() => navigation.navigate("gymDayWorkOut", { item })}
+            >
+              <Card.Title title={item.name} subtitle={item.intensity} titleStyle={styles.cardTitle} subtitleStyle={styles.cardIntensity}/>
+              <Card.Cover
                 source={{ uri: baseUrl + item.image }}
-                onPress={() => navigation.navigate("gymDayWorkOut", { item })}
-                />
-                <Text style={styles.cardIntensity}>
-                    {item.intensity}
-                </Text>
-              </Card>
-            </View>
+                style={{margin: 5}}
+              />
+            </Card>
+          </View>
         )
     }
 
@@ -61,7 +56,8 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontWeight: 'bold',
-    fontSize: 20
+    fontSize: 20,
+    textAlign: 'center'
   },
   cardIntensity: {
     textAlign: 'center',
