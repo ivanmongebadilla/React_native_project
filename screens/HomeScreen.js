@@ -14,6 +14,7 @@ const HomeScreen = () => {
     const news = useSelector((state) => state.news) 
 
   if (news.isLoading === false) {
+    //console.log(news)
     return (
       <SafeAreaView style={styles.container}>
         <View>

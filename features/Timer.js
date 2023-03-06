@@ -34,10 +34,13 @@ const Timer = ({ timer }) => {
         return (
             <View>
                 <Text style={styles.textTime}>{min.toString()}:{sec.toString() < 10 ? '0'+sec.toString() : sec.toString()}</Text>
-                <Button 
-                    title={isActive ? 'Pause' : 'Start'}
-                    onPress={() => toggle()}
-                />
+                <View style={styles.buttonSection}>
+                    <Button 
+                        style= {styles.buttonText}
+                        title={isActive ? 'Pause' : 'Start'}
+                        onPress={() => toggle()}
+                    />
+                </View>
             </View>
         )
     } else {
@@ -47,10 +50,20 @@ const Timer = ({ timer }) => {
 
 const styles = StyleSheet.create({
     textTime: {
-        fontSize: 32,
+        fontSize: 50,
+        color: 'white',
         fontWeight: 'bold',
         textAlign: 'center'
-    }
+    },
+    buttonSection: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+     },
+     buttonText: {
+        fontSize: 40,
+        fontWeight: 'bold',
+     }
 })
 
 export default Timer

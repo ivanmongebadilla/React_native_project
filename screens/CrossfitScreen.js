@@ -1,6 +1,6 @@
 import { View, Text, FlatList, Pressable, StyleSheet, ImageBackground } from "react-native";
 import { daysData } from '../dummydata/carouselData';
-import { Card } from 'react-native-elements';
+import { Card } from 'react-native-paper';
 import { useState } from "react";
 import { baseUrl } from "../shared/baseUrl";
 import { useSelector } from "react-redux";
@@ -9,25 +9,19 @@ import bgImg from '../images/background-img2.jpg'
 const CrossfitScreen = ({ navigation }) => {
 
   const crossfitDays = useSelector((state) => state.crossfitDays)
-  console.log(crossfitDays.isLoading)
   
   const RenderDays = ({ item }) => {
     
     return (
-      <View style={styles.cardStyle}>
-        <Card style={styles.card}>
-          <Card.Title>
-            <Text style={styles.cardTitle}>
-              {item.name}
-            </Text>
-          </Card.Title>
-          <Card.Image
-            source={{ uri: baseUrl + item.image }}
-            onPress={() => navigation.navigate("DayWorkOut", { item })}
-          />
-          <Text style={styles.cardIntensity}>
-              {item.intensity}
-          </Text>
+      <View style={styles.viewStyle}>
+        <Card style={styles.cardStyle}
+          onPress={() => navigation.navigate("DayWorkOut", { item })}
+        >
+          <Card.Title title={item.name} subtitle={item.intensity} titleStyle={styles.cardTitle} subtitleStyle={styles.cardIntensity}/>
+              <Card.Cover
+                source={{ uri: baseUrl + item.image }}
+                style={{margin: 5}}
+              />
         </Card>
       </View>
     )
@@ -55,18 +49,28 @@ const CrossfitScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+  viewStyle: {
+    width: '50%',
+    borderRadius: 5
+  },
   cardStyle: {
-    width: '50%'
+    borderRadius: 13, 
+    width: 170, 
+    margin: 13, 
+    backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
   card: {
     borderRadius: 8
   },
   cardTitle: {
     fontWeight: 'bold',
-    fontSize: 20
+    color: '#FFFFFF',
+    fontSize: 20,
+    textAlign: 'center'
   },
   cardIntensity: {
     textAlign: 'center',
+    color: '#FFFFFF',
     fontStyle: 'italic'
   },
   bgImage: {

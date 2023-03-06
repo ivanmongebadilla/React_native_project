@@ -11,8 +11,8 @@ const GymScreen = ({ navigation }) => {
 
     const RenderDays = ({ item }) => {
         return (
-          <View style={styles.cardStyle}>
-            <Card style={{borderRadius: 15, width: 170, margin: 13, backgroundColor: 'black'}}
+          <View style={styles.viewStyle}>
+            <Card style={styles.cardStyle}
               onPress={() => navigation.navigate("gymDayWorkOut", { item })}
             >
               <Card.Title title={item.name} subtitle={item.intensity} titleStyle={styles.cardTitle} subtitleStyle={styles.cardIntensity}/>
@@ -47,20 +47,28 @@ const GymScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-  cardStyle: {
+  viewStyle: {
     width: '50%',
     borderRadius: 5
+  },
+  cardStyle: {
+    borderRadius: 13, 
+    width: 170, 
+    margin: 13, 
+    backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
   card: {
     borderRadius: 8
   },
   cardTitle: {
     fontWeight: 'bold',
+    color: '#FFFFFF',
     fontSize: 20,
     textAlign: 'center'
   },
   cardIntensity: {
     textAlign: 'center',
+    color: '#FFFFFF',
     fontStyle: 'italic'
   },
   bgImage: {

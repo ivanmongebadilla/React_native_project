@@ -1,9 +1,11 @@
 import { View, Text, FlatList, StyleSheet, Modal, TouchableOpacity, Button, ImageBackground } from "react-native";
+import { ListItem } from "react-native-elements";
 import { WebView } from 'react-native-webview';
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import bgImg from '../images/background-img2.jpg';
 import Timer from "../features/Timer";
+import { SwipeRow } from 'react-native-swipe-list-view';
 
 const CrossfitDayScreen = ({ route }) => {
     const [showModal, setShowModal] = useState(false);
@@ -18,16 +20,23 @@ const CrossfitDayScreen = ({ route }) => {
                 <Text style={styles.workoutType}>{item.type}</Text>
                 { item.workout.map((value, index) => {
                     return (
-                        <Text 
-                            key={index}
-                            style={styles.workoutText}
-                            onPress={() => {
-                                setSelectedWorkout(value)
-                                setShowModal(!showModal) 
-                            }}
-                        >
-                            {value.workout}
-                        </Text>
+                        <SwipeRow rightOpenValue={-100}>
+                            <View style={styles.editView}>
+                                <Text>Edit</Text>
+                            </View>
+                            <View>
+                                <Text 
+                                    key={index}
+                                    style={styles.workoutText}
+                                    onPress={() => {
+                                        setSelectedWorkout(value)
+                                        setShowModal(!showModal) 
+                                    }}
+                                >
+                                {value.workout}
+                            </Text>
+                            </View>
+                        </SwipeRow>
                     )
                 })}
                 <Timer timer={item.timer}/>
@@ -95,6 +104,12 @@ const CrossfitDayScreen = ({ route }) => {
 }
 
 const styles = StyleSheet.create({
+    editView: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        flex: 1
+    },
     workoutText: {
         fontWeight: 'bold',
         textAlign: 'center',

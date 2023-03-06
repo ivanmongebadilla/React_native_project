@@ -11,7 +11,11 @@ export const fetchcrossfitDays = createAsyncThunk(
             );
         }
         const data = await response.json();
-        return data;
+        if (baseUrl === 'http://192.168.0.233:3001/') { 
+            return data;
+        } else {
+            return data[0].crossfitDays
+        }
     }
 );
 

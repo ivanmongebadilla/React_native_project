@@ -11,7 +11,11 @@ export const fetchNews = createAsyncThunk(
             );
         }
         const data = await response.json();
-        return data;
+        if (baseUrl === 'http://192.168.0.233:3001/') { 
+            return data;
+        } else {
+            return data[0].news
+        }
     }
 );
 
@@ -26,6 +30,7 @@ const newsSlice = createSlice({
         [fetchNews.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.errMess = null;
+            //console.log(action.payload)
             state.newsArray = action.payload;
         },
         [fetchNews.rejected]: (state, action) => {

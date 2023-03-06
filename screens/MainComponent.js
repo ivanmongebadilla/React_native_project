@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
 import HomeScreen from "./HomeScreen";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Button, Text } from "react-native";
 import { Icon } from 'react-native-elements';
 import CrossfitScreen from "./CrossfitScreen";
 import GymScreen from "./GymScreen";
@@ -14,6 +14,7 @@ import CrossfitDayScreen from "./CrossfitDayScreen";
 import { fetchgymDays } from "../reducers/gymDaysSlice";
 import { fetchgymWorkouts } from "../reducers/gymWorkoutsSlice";
 import GymDayScreen from './GymDayScreen';
+import UserIcon from "../features/UserIcon";
 
 const Drawer = createDrawerNavigator();
 
@@ -38,6 +39,9 @@ const HomeNavigator = () => {
                         iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                       />
+                    ),
+                    headerRight: () => (
+                        <UserIcon />
                     )
                 })}
             />
@@ -71,6 +75,11 @@ const CrossfitNavigator = () => {
                 component={CrossfitDayScreen}
                 options={({ route }) => ({
                     title: route.params.item.name,
+                    headerRight: () => (
+                        <Button
+                            title='Add'
+                        />
+                    )
                 })}
             />
         </Stack.Navigator>
@@ -103,6 +112,11 @@ const GymNavigator = () => {
                 component={GymDayScreen}
                 options={({ route }) => ({
                     title: route.params.item.name,
+                    headerRight: () => (
+                        <Button
+                            title='Add'
+                        />
+                    )
                 })}
             />
         </Stack.Navigator>
@@ -126,6 +140,7 @@ const MainComponent = () => {
         <Drawer.Navigator
             initialRouteName="Home"
             drawerStyle={{ backgroundColor: "#F2F3F4" }}
+            drawerPosition="left"
         >
             <Drawer.Screen
                 name="Home"
@@ -169,6 +184,20 @@ const MainComponent = () => {
                     ) 
                 }}
             />
+            <Drawer.Screen
+                name="Contact"
+                component={GymNavigator}
+                options={{ title: "Contact Us",
+                    drawerIcon: ({ color }) => (
+                        <Icon 
+                            name='bomb'
+                            type='font-awesome'
+                            iconStyle={{ width: 24 }}
+                            color={color}
+                        />
+                    ) 
+                }}
+            />
         </Drawer.Navigator>
     </View>
   )
@@ -176,7 +205,7 @@ const MainComponent = () => {
 
 const styles = StyleSheet.create({
     stackIcon: {
-        marginLeft: 10,
+        margin: 10,
         color: '#fff',
         fontSize: 24
     },
