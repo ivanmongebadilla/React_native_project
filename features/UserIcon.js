@@ -1,8 +1,9 @@
 import { StyleSheet, View, Text, Modal, SafeAreaView, FlatList } from "react-native";
 import { useState } from "react";
 // import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger } from "react-native-popup-menu";
-import { Icon } from 'react-native-elements';
+import { Button, Icon, Input } from 'react-native-elements';
 import { Menu, MenuItem } from 'react-native-material-menu';
+import Login from "./Login";
 
 const authUser = [
     { id: '1', value: 'Profile' },
@@ -24,6 +25,9 @@ const ItemSeparatorView = () => {
 
 const UserIcon = () => {
     const [visible, setVisible] = useState(false);
+    const [logModalVisible, setlogModalVisible] = useState(false);
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
     return (
         <>
@@ -31,33 +35,65 @@ const UserIcon = () => {
                 name='user'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
-                onPress={() => setVisible(!visible)}
+                onPress={() => {
+                    setVisible(!visible)
+                    console.log(visible)
+                }}
             />
             <Modal transparent visible={visible}>
-                <SafeAreaView style={{flex:1}} onTouchStart={ () => setVisible(false)}>
+                <SafeAreaView style={{flex:1,}} onTouchStart={ () => setVisible(false)}>
                     <View style={styles.userPopup}>
                         <FlatList 
                             horizontal={false}
-                            data={authUser}
+                            data={noUser}
                             ItemSeparatorComponent={ItemSeparatorView}
                             renderItem={ ({item}) => {
                                 return (
                                     <View style={{marginBottom: 5}}>
-                                        <Text style={styles.userOptions}>{item.value}</Text>
+                                        <Text 
+                                            style={styles.userOptions}
+                                            onPress={ () => {
+                                                setlogModalVisible(!logModalVisible)
+                                                console.log(logModalVisible)
+                                            }}
+                                        >
+                                            {item.value}
+                                        </Text>
                                     </View>
                                 )
                             }}
                             keyExtractor={(item) => item.id}
                         />
-                        {/* <Text style={styles.userOptions}>Sign Up</Text>
-                        <Text style={styles.userOptions}>--------</Text>
-                        <Text style={styles.userOptions}>Log In</Text>
-                        <Text style={styles.userOptions}>--------</Text>
-                        <Text style={styles.userOptions}>Log Out</Text>
-                        <Text style={styles.userOptions}>--------</Text>
-                        <Text style={styles.userOptions}>Profile</Text> */}
                     </View>
                 </SafeAreaView>
+                <Modal visible={logModalVisible}>
+                    <SafeAreaView>
+                        <View>
+                            <Input 
+                                placeholder='Username'
+                                onChangeText={(text) => setUsername(text)}
+                                value={username}
+                            />
+                            <Input 
+                                placeholder='Password'
+                                onChangeText={(text) => setPassword(text)}
+                                value={password}
+                            />
+                        </View>
+                        <View>
+                            <Button 
+                                onPress={() => setlogModalVisible(false)}
+                                title='LogIn'
+                                color='#5637DD'
+                            />
+                            <Button 
+                                onPress={() => setlogModalVisible(false)}
+                                title='Cancel'
+                                color='#5637DD'
+                            />
+                        </View>
+                    </SafeAreaView>         
+                </Modal>
             </Modal>
         </>
     )
