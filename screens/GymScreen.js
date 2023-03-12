@@ -8,6 +8,7 @@ import bgImg from '../images/background-img2.jpg'
 
 const GymScreen = ({ navigation }) => {
     const gymDays = useSelector((state) => state.gymDays)
+    const userData = useSelector((state) => state.userLogData)
 
     const RenderDays = ({ item }) => {
         return (
@@ -25,7 +26,20 @@ const GymScreen = ({ navigation }) => {
         )
     }
 
-    if (gymDays.isLoading === false) {
+    if (!userData.logged) {
+      return (
+        <View>
+          <ImageBackground
+            source={bgImg}
+            resizeMode="cover"
+            style={styles.bgImage}
+          >
+            <Text style={styles.cardTitle}>Please Log In to access the data</Text>
+          </ImageBackground>
+        </View>
+      )
+    } else {
+      if (gymDays.isLoading === false) {
         return (
           <View>
             <ImageBackground
@@ -43,7 +57,30 @@ const GymScreen = ({ navigation }) => {
             </ImageBackground> 
           </View>
         );
+      } else {
+        return null
+      }
     }
+
+    // if (gymDays.isLoading === false) {
+    //     return (
+    //       <View>
+    //         <ImageBackground
+    //           source={bgImg}
+    //           resizeMode="cover"
+    //           style={styles.bgImage}
+    //         >
+    //           <FlatList 
+    //             horizontal={false}
+    //             numColumns={2}
+    //             data={gymDays.gymDaysArray}
+    //             renderItem={RenderDays}
+    //             keyExtractor={(item) => item.id.toString()}
+    //           />
+    //         </ImageBackground> 
+    //       </View>
+    //     );
+    // }
 }
 
 const styles = StyleSheet.create({
@@ -73,6 +110,8 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     justifyContent: 'center',
+    height: '100%',
+    width: '100%'
   }
 })
 

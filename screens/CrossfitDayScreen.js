@@ -20,23 +20,18 @@ const CrossfitDayScreen = ({ route }) => {
                 <Text style={styles.workoutType}>{item.type}</Text>
                 { item.workout.map((value, index) => {
                     return (
-                        <SwipeRow rightOpenValue={-100}>
-                            <View style={styles.editView}>
-                                <Text>Edit</Text>
-                            </View>
-                            <View>
-                                <Text 
-                                    key={index}
-                                    style={styles.workoutText}
-                                    onPress={() => {
-                                        setSelectedWorkout(value)
-                                        setShowModal(!showModal) 
-                                    }}
-                                >
-                                {value.workout}
-                            </Text>
-                            </View>
-                        </SwipeRow>
+                        <View>
+                            <Text 
+                                key={index}
+                                style={styles.workoutText}
+                                onPress={() => {
+                                    setSelectedWorkout(value)
+                                    setShowModal(!showModal) 
+                                }}
+                            >
+                            {value.workout}
+                        </Text>
+                        </View>
                     )
                 })}
                 <Timer timer={item.timer}/>

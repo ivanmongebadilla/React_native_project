@@ -9,6 +9,7 @@ import bgImg from '../images/background-img2.jpg'
 const CrossfitScreen = ({ navigation }) => {
 
   const crossfitDays = useSelector((state) => state.crossfitDays)
+  const userData = useSelector((state) => state.userLogData)
   
   const RenderDays = ({ item }) => {
     
@@ -27,7 +28,9 @@ const CrossfitScreen = ({ navigation }) => {
     )
   }
 
-  if (crossfitDays.isLoading === false) {
+  console.log('This is userData from CrossfitScreen: ', userData)
+
+  if (!userData.logged) {
     return (
       <View>
         <ImageBackground
@@ -35,17 +38,53 @@ const CrossfitScreen = ({ navigation }) => {
           resizeMode="cover"
           style={styles.bgImage}
         >
-          <FlatList 
-            horizontal={false}
-            numColumns={2}
-            data={crossfitDays.crossfitDaysArray}
-            renderItem={RenderDays}
-            keyExtractor={(item) => item.id.toString()}
-          />
-        </ImageBackground> 
+          <Text style={styles.cardTitle}>Please Log In to access the data</Text>
+        </ImageBackground>
       </View>
-    );
+    )
+  } else {
+    if (crossfitDays.isLoading === false) {
+      return (
+        <View>
+          <ImageBackground
+            source={bgImg}
+            resizeMode="cover"
+            style={styles.bgImage}
+          >
+            <FlatList 
+              horizontal={false}
+              numColumns={2}
+              data={crossfitDays.crossfitDaysArray}
+              renderItem={RenderDays}
+              keyExtractor={(item) => item.id.toString()}
+            />
+          </ImageBackground> 
+        </View>
+      );
+    } else {
+      return null
+    }
   }
+
+  // if (crossfitDays.isLoading === false) {
+  //   return (
+  //     <View>
+  //       <ImageBackground
+  //         source={bgImg}
+  //         resizeMode="cover"
+  //         style={styles.bgImage}
+  //       >
+  //         <FlatList 
+  //           horizontal={false}
+  //           numColumns={2}
+  //           data={crossfitDays.crossfitDaysArray}
+  //           renderItem={RenderDays}
+  //           keyExtractor={(item) => item.id.toString()}
+  //         />
+  //       </ImageBackground> 
+  //     </View>
+  //   );
+  // }
 }
 
 const styles = StyleSheet.create({
@@ -75,6 +114,8 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     justifyContent: 'center',
+    height: '100%',
+    width: '100%'
   }
 })
 

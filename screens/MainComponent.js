@@ -190,7 +190,7 @@ const MainComponent = () => {
                 options={{ title: "Contact Us",
                     drawerIcon: ({ color }) => (
                         <Icon 
-                            name='bomb'
+                            name='id-card'
                             type='font-awesome'
                             iconStyle={{ width: 24 }}
                             color={color}

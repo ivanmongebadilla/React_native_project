@@ -1,9 +1,12 @@
-import { StyleSheet, View, Text, Modal, SafeAreaView, FlatList } from "react-native";
+import { StyleSheet, View, Text, Modal, SafeAreaView, FlatList, TouchableOpacity } from "react-native";
 import { useState } from "react";
 // import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger } from "react-native-popup-menu";
 import { Button, Icon, Input } from 'react-native-elements';
 import { Menu, MenuItem } from 'react-native-material-menu';
 import Login from "./Login";
+import UserScreen from "../screens/UserScreen";
+import { useSelector } from "react-redux";
+
 
 const authUser = [
     { id: '1', value: 'Profile' },
@@ -26,8 +29,8 @@ const ItemSeparatorView = () => {
 const UserIcon = () => {
     const [visible, setVisible] = useState(false);
     const [logModalVisible, setlogModalVisible] = useState(false);
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [component, setComponent] = useState('');
+    const userData = useSelector((state) => state.userLogData)
 
     return (
         <>
@@ -37,62 +40,38 @@ const UserIcon = () => {
                 iconStyle={styles.stackIcon}
                 onPress={() => {
                     setVisible(!visible)
-                    console.log(visible)
                 }}
             />
             <Modal transparent visible={visible}>
-                <SafeAreaView style={{flex:1,}} onTouchStart={ () => setVisible(false)}>
-                    <View style={styles.userPopup}>
-                        <FlatList 
-                            horizontal={false}
-                            data={noUser}
-                            ItemSeparatorComponent={ItemSeparatorView}
-                            renderItem={ ({item}) => {
-                                return (
-                                    <View style={{marginBottom: 5}}>
-                                        <Text 
-                                            style={styles.userOptions}
-                                            onPress={ () => {
-                                                setlogModalVisible(!logModalVisible)
-                                                console.log(logModalVisible)
-                                            }}
-                                        >
-                                            {item.value}
-                                        </Text>
-                                    </View>
-                                )
-                            }}
-                            keyExtractor={(item) => item.id}
-                        />
-                    </View>
-                </SafeAreaView>
+                <TouchableOpacity style={{flex:1}} onPress={() => setVisible(false)}>
+                    <TouchableOpacity style={styles.userPopup} activeOpacity={1}>
+                        <View>
+                            <FlatList 
+                                horizontal={false}
+                                data={userData.userLogData.success ?  authUser : noUser}
+                                ItemSeparatorComponent={ItemSeparatorView}
+                                renderItem={ ({item}) => {
+                                    return (
+                                        <View style={{marginBottom: 5}}>
+                                            <Text 
+                                                style={styles.userOptions}
+                                                onPress={ () => {
+                                                    setComponent(item.id)
+                                                    setlogModalVisible(!logModalVisible)
+                                                }}
+                                            >
+                                                {item.value}
+                                            </Text>
+                                        </View>
+                                    )
+                                }}
+                                keyExtractor={(item) => item.id}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                </TouchableOpacity>
                 <Modal visible={logModalVisible}>
-                    <SafeAreaView>
-                        <View>
-                            <Input 
-                                placeholder='Username'
-                                onChangeText={(text) => setUsername(text)}
-                                value={username}
-                            />
-                            <Input 
-                                placeholder='Password'
-                                onChangeText={(text) => setPassword(text)}
-                                value={password}
-                            />
-                        </View>
-                        <View>
-                            <Button 
-                                onPress={() => setlogModalVisible(false)}
-                                title='LogIn'
-                                color='#5637DD'
-                            />
-                            <Button 
-                                onPress={() => setlogModalVisible(false)}
-                                title='Cancel'
-                                color='#5637DD'
-                            />
-                        </View>
-                    </SafeAreaView>         
+                    <UserScreen component={component} setVisible={setVisible} setlogModalVisible={setlogModalVisible}  />        
                 </Modal>
             </Modal>
         </>
@@ -124,7 +103,11 @@ const styles = StyleSheet.create({
         fontSize: 25,
         alignContent: 'center',
         fontWeight: 'bold'
-    }
+    },
+    modal: {
+        width: 155,
+        height: 300
+      }
 })
 
 export default UserIcon;
