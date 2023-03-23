@@ -15,6 +15,8 @@ import { fetchgymDays } from "../reducers/gymDaysSlice";
 import { fetchgymWorkouts } from "../reducers/gymWorkoutsSlice";
 import GymDayScreen from './GymDayScreen';
 import UserIcon from "../features/UserIcon";
+import LocateGym from "./LocateGym";
+import ContactUs from "./ContactUs";
 
 const Drawer = createDrawerNavigator();
 
@@ -123,6 +125,55 @@ const GymNavigator = () => {
     )
 }
 
+const LocateGymNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator
+            initialRouteName="LocateGym" 
+            screenOptions={screenOptions}
+        >
+            <Stack.Screen 
+                name="Locate Gym" 
+                component={LocateGym} 
+                options={({ navigation }) => ({
+                    headerLeft: () => (
+                     <Icon 
+                       name='bomb'
+                       type='font-awesome'
+                       iconStyle={styles.stackIcon}
+                       onPress={() => navigation.toggleDrawer()}
+                     />
+                   )
+                })}
+            />
+        </Stack.Navigator>
+    )
+}
+
+const ContactUsNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator
+            initialRouteName="ContactUs" 
+            screenOptions={screenOptions}
+        >
+            <Stack.Screen 
+                name="Contact Us" 
+                component={ContactUs} 
+                options={({ navigation }) => ({
+                    headerLeft: () => (
+                     <Icon 
+                       name='bomb'
+                       type='font-awesome'
+                       iconStyle={styles.stackIcon}
+                       onPress={() => navigation.toggleDrawer()}
+                     />
+                   )
+                })}
+            />
+        </Stack.Navigator>
+    )
+}
 
 const MainComponent = () => {
     const dispatch = useDispatch();
@@ -184,9 +235,23 @@ const MainComponent = () => {
                     ) 
                 }}
             />
+            <Drawer.Screen 
+                name="Locate Gym"
+                component={LocateGymNavigator}
+                options={{ title: "Contact Us",
+                    drawerIcon: ({ color }) => (
+                        <Icon 
+                            name='id-card'
+                            type='font-awesome'
+                            iconStyle={{ width: 24 }}
+                            color={color}
+                        />
+                    ) 
+                }}
+            />
             <Drawer.Screen
                 name="Contact"
-                component={GymNavigator}
+                component={ContactUsNavigator}
                 options={{ title: "Contact Us",
                     drawerIcon: ({ color }) => (
                         <Icon 
