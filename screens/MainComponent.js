@@ -138,7 +138,7 @@ const LocateGymNavigator = () => {
                 options={({ navigation }) => ({
                     headerLeft: () => (
                      <Icon 
-                       name='bomb'
+                       name='map-pin'
                        type='font-awesome'
                        iconStyle={styles.stackIcon}
                        onPress={() => navigation.toggleDrawer()}
@@ -163,7 +163,7 @@ const ContactUsNavigator = () => {
                 options={({ navigation }) => ({
                     headerLeft: () => (
                      <Icon 
-                       name='bomb'
+                       name='id-card'
                        type='font-awesome'
                        iconStyle={styles.stackIcon}
                        onPress={() => navigation.toggleDrawer()}
@@ -238,10 +238,10 @@ const MainComponent = () => {
             <Drawer.Screen 
                 name="Locate Gym"
                 component={LocateGymNavigator}
-                options={{ title: "Contact Us",
+                options={{ title: "Locate Gym",
                     drawerIcon: ({ color }) => (
                         <Icon 
-                            name='id-card'
+                            name='map-pin'
                             type='font-awesome'
                             iconStyle={{ width: 24 }}
                             color={color}
