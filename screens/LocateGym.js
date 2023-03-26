@@ -1,4 +1,4 @@
-import { StyleSheet, View, FlatList, Text } from 'react-native';
+import { StyleSheet, View, FlatList, Text, ImageBackground, Linking } from 'react-native';
 import { ListItem } from "react-native-elements";
 import { useEffect, useState } from "react";
 import * as Location from 'expo-location';
@@ -6,18 +6,31 @@ import { GOOGLE_API_KEY } from '../environments';
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { fetchNearestPlaces } from '../reducers/nearestPlacesSlice';
+import bgImg from '../images/background-img2.jpg'
 
 const LocateGym = () => {
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
     const nearData = useSelector((state) => state.nearestPlaces) 
     const dispatch = useDispatch();
+
+    const handlePress = async (latitude, longitude) => {
+        const mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&dir_action=navigate`
+
+        const supported = await Linking.canOpenURL(mapUrl);
+        if (supported) {
+            await Linking.openURL(mapUrl);
+        } else {
+            Alert.alert('URL not supported')
+        }
+    }
     
     const renderNearLocations = ({ item }) => {
         return (
             <View style={{margin: 5}}>
                 <ListItem
-                containerStyle={{backgroundColor: 'rgba(52, 52, 52, 0.5)', borderRadius: 10}}
+                    containerStyle={{backgroundColor: 'rgba(52, 52, 52, 0.5)', borderRadius: 10}}
+                    onPress={() => handlePress(item.geometry.location.lat, item.geometry.location.lng)}
                 >
                     <ListItem.Content>
                         <ListItem.Title>{item.name}</ListItem.Title>
@@ -64,7 +77,7 @@ const LocateGym = () => {
         )
     }
     else {
-        console.log('This is data.array: ', nearData.nearestPlacesArray)
+        //console.log('This is data.array: ', nearData.nearestPlacesArray)
         return (
             <FlatList 
                 data={nearData.nearestPlacesArray}
@@ -89,6 +102,10 @@ const styles = StyleSheet.create({
     },
     input: {
         borderColor: '#888'
+    },
+    bgImage: { 
+        flex: 1,
+        justifyContent: 'center',
     }
   });
 
