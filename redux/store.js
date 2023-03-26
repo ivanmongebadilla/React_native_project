@@ -5,6 +5,7 @@ import { crossfitWorkoutsReducer } from '../reducers/crossfitWorkoutsSlice';
 import { gymDaysReducer } from '../reducers/gymDaysSlice';
 import { gymWorkoutsReducer } from '../reducers/gymWorkoutsSlice';
 import { userLogDataReducer } from '../reducers/userSlice';
+import { nearestPlacesReducer } from '../reducers/nearestPlacesSlice';
 
 export const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
         crossfitWorkouts: crossfitWorkoutsReducer,
         gymDays: gymDaysReducer,
         gymWorkouts: gymWorkoutsReducer,
-        userLogData: userLogDataReducer
+        userLogData: userLogDataReducer,
+        nearestPlaces: nearestPlacesReducer 
     }
 })

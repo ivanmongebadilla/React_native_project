@@ -133,7 +133,7 @@ const LocateGymNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen 
-                name="Locate Gym" 
+                name="Crossfit/Gym Near Me" 
                 component={LocateGym} 
                 options={({ navigation }) => ({
                     headerLeft: () => (
@@ -238,7 +238,7 @@ const MainComponent = () => {
             <Drawer.Screen 
                 name="Locate Gym"
                 component={LocateGymNavigator}
-                options={{ title: "Locate Gym",
+                options={{ title: "Crossfit/Gym Near Me",
                     drawerIcon: ({ color }) => (
                         <Icon 
                             name='map-pin'
